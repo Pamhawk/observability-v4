@@ -96,7 +96,7 @@ export function MultiBarChart({
         label: (showValueLabels || showSegmentLabels) ? {
           show: true,
           position: horizontal ? 'inside' as const : 'inside' as const,
-          formatter: (params: { dataIndex: number; value: number }) => {
+          formatter: (params: any) => {
             if (!params.value) return '';
             if (segmentLabelFormat === 'percentage' && stacked) {
               const total = categoryTotals[params.dataIndex];
@@ -119,7 +119,7 @@ export function MultiBarChart({
         label: {
           show: true,
           position: horizontal ? 'right' as const : 'top' as const,
-          formatter: (params: { dataIndex: number }) => `${categoryTotals[params.dataIndex].toLocaleString()}`,
+          formatter: (params: any) => `${categoryTotals[params.dataIndex].toLocaleString()}`,
           fontSize: 11,
           color: '#374151',
           fontWeight: 'bold' as const,

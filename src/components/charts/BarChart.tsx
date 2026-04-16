@@ -58,7 +58,7 @@ export function BarChart({
       axisPointer: {
         type: 'shadow',
       },
-      formatter: (params: AxisTooltipParam | AxisTooltipParam[]) => {
+      formatter: (params: any) => {
         if (!Array.isArray(params) || params.length === 0) return '';
         const param = params[0];
         const dataItem = data.find(d => d.name === param.name);

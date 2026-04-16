@@ -49,7 +49,7 @@ export function SankeyPreviewChart({ height = 280, nodes, links }: SankeyPreview
     tooltip: {
       trigger: 'item',
       triggerOn: 'mousemove',
-      formatter: (params: EChartsTooltipParams) => {
+      formatter: (params: any) => {
         if (params.dataType === 'node') {
           const node = nodeMap.get(params.name);
           if (node) {

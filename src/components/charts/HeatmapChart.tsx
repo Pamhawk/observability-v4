@@ -55,7 +55,7 @@ export function HeatmapChart({
   const option: EChartsOption = {
     tooltip: {
       position: 'top',
-      formatter: (params: { value: [number, number, number] }) => {
+      formatter: (params: any) => {
         return `<strong>${yLabels[params.value[1]]}</strong> at <strong>${xLabels[params.value[0]]}</strong><br/>Flows: ${params.value[2]}`;
       },
     },

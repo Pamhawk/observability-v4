@@ -70,7 +70,7 @@ export function TimeSeriesChart({
       tooltip: {
         trigger: 'axis',
         axisPointer: { type: 'cross', label: { backgroundColor: '#1a1f2e' } },
-        formatter: (params: AxisTooltipParam | AxisTooltipParam[]) => {
+        formatter: (params: any) => {
           if (!Array.isArray(params)) return '';
           let tip = `<div style="font-weight:600;margin-bottom:8px;">${params[0].axisValue}</div>`;
           params.forEach((p: AxisTooltipParam) => {

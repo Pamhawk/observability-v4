@@ -109,7 +109,7 @@ export function GeoMapChart({ data = defaultData, height = 280 }: GeoMapChartPro
   const option: EChartsOption = {
     tooltip: {
       trigger: 'item',
-      formatter: (params: { name: string; value?: number }) => {
+      formatter: (params: any) => {
         const displayName = ECHARTS_TO_NAME[params.name] || params.name;
         if (params.value) {
           return `<div style="font-weight:600;margin-bottom:4px;">${displayName}</div>
@@ -166,10 +166,11 @@ export function GeoMapChart({ data = defaultData, height = 280 }: GeoMapChartPro
     series: [
       {
         type: 'map',
+        map: 'world',
         geoIndex: 0,
         data: echartsData,
       },
-    ],
+    ] as any,
   };
 
   return (

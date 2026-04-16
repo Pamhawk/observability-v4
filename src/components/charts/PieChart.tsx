@@ -84,7 +84,7 @@ export function PieChart({
     } : {}),
     tooltip: {
       trigger: 'item',
-      formatter: (params: { name: string; value: number; percent: number }) => {
+      formatter: (params: any) => {
         return `
           <div style="font-weight: 600; margin-bottom: 4px;">${params.name}</div>
           <div>Value: <strong>${params.value.toLocaleString()}</strong></div>

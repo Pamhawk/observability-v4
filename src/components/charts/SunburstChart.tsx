@@ -88,7 +88,7 @@ export function SunburstChart({
       borderColor: '#e5e7eb',
       borderWidth: 1,
       textStyle: { color: '#1f2937', fontSize: 12 },
-      formatter: (params: { data?: { name: string; value?: number; percent?: number }; treePathInfo?: { length: number }[] }) => {
+      formatter: (params: any) => {
         const d = params.data;
         if (!d) return '';
         const level = (params.treePathInfo?.length ?? 0) <= 2 ? 'Router' : 'Interface';
