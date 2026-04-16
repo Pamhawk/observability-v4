@@ -177,13 +177,13 @@ export function ChartConfigPanel({ chartType, config, columns, onChange }: Chart
             label="Sort"
             value={c.sortOrder}
             options={[{ value: 'desc', label: 'Desc' }, { value: 'asc', label: 'Asc' }, { value: 'none', label: 'None' }]}
-            onChange={v => update({ sortOrder: v })}
+            onChange={v => update({ sortOrder: v as 'asc' | 'desc' | 'none' })}
           />
           <RadioGroup
             label="Orientation"
             value={c.orientation}
             options={[{ value: 'vertical', label: 'Vertical' }, { value: 'horizontal', label: 'Horizontal' }]}
-            onChange={v => update({ orientation: v })}
+            onChange={v => update({ orientation: v as 'vertical' | 'horizontal' })}
           />
           {(chartType === 'topNBar' || c.limit) && (
             <NumberInput label="Limit" value={c.limit || 10} onChange={v => update({ limit: v })} min={1} max={100} />

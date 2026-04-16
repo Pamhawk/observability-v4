@@ -52,7 +52,8 @@ export function PieChart({
 
   const option: EChartsOption = {
     ...(donut && totalProp != null ? {
-      graphic: [{
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      graphic: ([{
         type: 'group',
         left: centerX,
         top: 'center',
@@ -62,9 +63,8 @@ export function PieChart({
             style: {
               text: formatTotal(totalProp),
               fontSize: 22,
-              fontWeight: 'bold' as const,
+              fontWeight: 'bold',
               fill: '#1a1a2e',
-              textAlign: 'center',
               x: 0,
             },
           },
@@ -74,13 +74,12 @@ export function PieChart({
               text: 'Total',
               fontSize: 11,
               fill: '#6b7280',
-              textAlign: 'center',
               x: 0,
               y: 24,
             },
           },
         ],
-      }],
+      }] as any),
     } : {}),
     tooltip: {
       trigger: 'item',

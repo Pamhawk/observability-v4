@@ -132,13 +132,13 @@ export function TimeSeriesChart({
     tooltip: {
       trigger: 'axis',
       axisPointer: { type: 'cross', label: { backgroundColor: '#1a1f2e' } },
-      formatter: (params: AxisTooltipParam | AxisTooltipParam[]) => {
+      formatter: (params: any) => {
         if (!Array.isArray(params)) return '';
         let tooltip = `<div style="font-weight: 600; margin-bottom: 8px;">${new Date(params[0].axisValue).toLocaleString()}</div>`;
-        params.forEach((param: AxisTooltipParam) => {
+        params.forEach((param: any) => {
           tooltip += `<div style="display: flex; justify-content: space-between; gap: 16px;">
             <span>${param.marker} ${param.seriesName}</span>
-            <span style="font-weight: 500;">${param.value.toFixed(2)} Gbps</span>
+            <span style="font-weight: 500;">${typeof param.value === 'number' ? param.value.toFixed(2) : param.value} Gbps</span>
           </div>`;
         });
         return tooltip;

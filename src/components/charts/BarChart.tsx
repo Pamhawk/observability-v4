@@ -1,11 +1,6 @@
 import ReactECharts from 'echarts-for-react';
 import type { EChartsOption } from 'echarts';
 
-interface AxisTooltipParam {
-  name: string;
-  value: number;
-  dataIndex: number;
-}
 
 interface BarChartData {
   name: string;

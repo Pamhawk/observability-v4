@@ -5,6 +5,7 @@ import { Camera } from 'lucide-react';
 interface ChartExportWrapperProps {
   children: ReactNode;
   filename?: string;
+  title?: string;
 }
 
 export function ChartExportWrapper({ children, filename = 'chart' }: ChartExportWrapperProps) {

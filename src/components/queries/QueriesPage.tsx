@@ -214,7 +214,7 @@ export function QueriesPage() {
     setLayouts(prev => {
       const cleaned: ResponsiveLayouts = {};
       for (const [bp, items] of Object.entries(prev)) {
-        cleaned[bp] = (items as Layout[]).filter(l => l.i !== widgetId);
+        cleaned[bp] = (items as any[]).filter((l: any) => l.i !== widgetId) as Layout[];
       }
       return cleaned;
     });

@@ -2,11 +2,6 @@ import ReactECharts from 'echarts-for-react';
 import type { EChartsOption } from 'echarts';
 import type { SankeyNodeData, SankeyLinkData } from '../../utils';
 
-interface EChartsTooltipParams {
-  dataType?: string;
-  name?: string;
-  data?: { source?: string; target?: string; value?: number };
-}
 
 interface SankeyPreviewChartProps {
   height?: number;
